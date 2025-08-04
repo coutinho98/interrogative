@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { QuestionsService } from './questions.service';
 import { VoteDto } from './dto/vote.dto';
+import { QuestionResultDto } from './dto/question-result.dto';
 
 @Controller('questions')
 export class QuestionsController {
@@ -12,8 +13,8 @@ export class QuestionsController {
   }
 
   @Post('vote')
-  async registerVote(@Body() voteDto: VoteDto) {
-    return this.questionsService.registerVote(voteDto)
+  async registerVote(@Body() voteDto: VoteDto): Promise<QuestionResultDto> {
+    return this.questionsService.registerVote(voteDto);
   }
 
   @Get('all')
