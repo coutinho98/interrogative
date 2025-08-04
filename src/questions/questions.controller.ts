@@ -15,4 +15,9 @@ export class QuestionsController {
   async registerVote(@Body() voteDto: VoteDto) {
     return this.questionsService.registerVote(voteDto)
   }
+
+  @Get('all')
+  async findAllQuestions() {
+    return this.questionsService.findAll();
+  }
 }

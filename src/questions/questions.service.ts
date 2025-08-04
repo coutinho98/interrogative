@@ -29,6 +29,9 @@ export class QuestionsService {
       where: { id: questionId },
       data: updateData
     })
+  }
 
+  async findAll(): Promise<any> {
+    return this.prisma.question.findMany();
   }
 }
