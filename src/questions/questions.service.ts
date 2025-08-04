@@ -23,7 +23,7 @@ export class QuestionsService {
 
     const updateData = option === 'optionA'
       ? { votesA: { increment: 1 } }
-      : { voteB: { increment: 1 } }
+      : { votesB: { increment: 1 } }
 
     const updatedQuestion = await this.prisma.question.update({
       where: { id: questionId },
